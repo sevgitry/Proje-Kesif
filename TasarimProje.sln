@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34701.34
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TasarimProje", "TasarimProje\TasarimProje.csproj", "{04D361A0-E171-4282-AE3E-EC8580C9A71D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B8C2C26A-B51A-4784-BB3B-F9CF413A0782} = {B8C2C26A-B51A-4784-BB3B-F9CF413A0782}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{B8C2C26A-B51A-4784-BB3B-F9CF413A0782}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{04D361A0-E171-4282-AE3E-EC8580C9A71D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04D361A0-E171-4282-AE3E-EC8580C9A71D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04D361A0-E171-4282-AE3E-EC8580C9A71D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04D361A0-E171-4282-AE3E-EC8580C9A71D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8C2C26A-B51A-4784-BB3B-F9CF413A0782}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8C2C26A-B51A-4784-BB3B-F9CF413A0782}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8C2C26A-B51A-4784-BB3B-F9CF413A0782}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8C2C26A-B51A-4784-BB3B-F9CF413A0782}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7014FA44-955B-449F-B681-09091CA94248}
+	EndGlobalSection
+EndGlobal
