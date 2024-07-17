@@ -1,0 +1,298 @@
+﻿
+<section>
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-6">
+                <div class="card p-4">
+                 @*    <div class="input-group mb-3">
+                        <input type="text" class="form-control" id="search">
+                        <button class="btn btn-primary">Temizle</button>
+
+                    </div> 
+ *@
+
+                    <div class="input-group" data-widget="sidebar-search">
+                        <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+                        <div class="input-group-append">
+                            <button class="btn btn-sidebar">
+                                <i class="fas fa-search fa-fw"></i>
+                            </button>
+                        </div>
+                    </div>
+
+
+                    <h3>TÜRLER</h3>
+                    <div class="d-flex">
+                        
+
+
+                    
+                     <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+                           
+                            @foreach (var tur in @ViewBag.Tur)
+                            {
+                                string Yol = "/Home/index/-1/" + tur.No;
+
+
+                                <a href="@Yol">
+                                <input type="checkbox" class="btn-check" id=@tur.No autocomplete="off">
+                                    <label class="btn btn-outline-primary" for=@tur.Ad>@tur.Ad</label>
+                                </a>
+                            }                     
+                       </div> 
+
+                    
+
+
+                       </div>
+                    <h3>KARTLAR</h3>
+                    
+                    <div class="d-flex">
+                        <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+                           
+
+
+                            @foreach (var projeMalzemeleri in @ViewBag.Material)
+                            {
+                                @if (projeMalzemeleri.KategoriNo == 2)
+                                {
+
+                                    string Yol = "/Home/index/" + projeMalzemeleri.No;
+
+                             
+                                    <a href="@Yol" >
+
+                                    
+                                    <input type="checkbox" class="btn-check " id=@projeMalzemeleri.No autocomplete="off">
+                                    <label class="btn btn-outline-primary malzemeBtn" data-id=@projeMalzemeleri.No for=y>@projeMalzemeleri.Baslik</label>
+                                    </a>
+                                }
+                            }
+                            </div>
+                        </div>
+                    <h3>SENSÖRLER</h3>
+                    <div class="d-flex">
+                        
+                        <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+
+
+                            
+
+                            @foreach (var projeMalzemeleri in @ViewBag.Material)
+                            {
+                                @if (projeMalzemeleri.KategoriNo ==1)
+                                {
+                                    string Yol = "/Home/index/" + projeMalzemeleri.No;
+                                    <a href="@Yol" >
+                                    @* <input type="checkbox" class="btn-check" id=@($"btncheck2{butonsayac}") autocomplete="off"> *@
+                                    <input type="checkbox" class="btn-check" id=@projeMalzemeleri.No autocomplete="off">
+                                    <label class="btn btn-outline-primary malzemeBtn" data-id=@projeMalzemeleri.No for=y>@projeMalzemeleri.Baslik</label>
+
+
+
+                                     
+
+                                </a>}
+                            }
+                        </div>
+                    </div>
+                    <h3>Devre Elemanları</h3>
+
+                    <div class="d-flex">
+                        <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+
+
+
+                            @foreach (var projeMalzemeleri in @ViewBag.Material)
+                            {
+                                @if (projeMalzemeleri.KategoriNo == 3)
+                                {
+
+                                    string Yol = "/Home/index/" + projeMalzemeleri.No;
+                                    
+                                    @* <input type="checkbox" class="btn-check" id=@($"btncheck2{butonsayac}") autocomplete="off"> *@
+                                    <a href="@Yol" >
+                                    <input type="checkbox" class="btn-check " id=@projeMalzemeleri.No autocomplete="off">
+                                    <label class="btn btn-outline-primary malzemeBtn" data-id=@projeMalzemeleri.No for=y>@projeMalzemeleri.Baslik</label>
+                               </a> 
+                               }
+                            }
+                        </div>
+                    </div>
+
+                    <h3>Görüntüleme Elemanları</h3>
+
+                    <div class="d-flex">
+                        <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+
+
+
+                            @foreach (var projeMalzemeleri in @ViewBag.Material)
+                            {
+                                @if (projeMalzemeleri.KategoriNo == 4)
+                                {
+
+                                    string Yol = "/Home/index/" + projeMalzemeleri.No;
+
+                                    @* <input type="checkbox" class="btn-check" id=@($"btncheck2{butonsayac}") autocomplete="off"> *@
+                                    <a href="@Yol">
+                                        <input type="checkbox" class="btn-check " id=@projeMalzemeleri.No autocomplete="off">
+                                        <label class="btn btn-outline-primary malzemeBtn" data-id=@projeMalzemeleri.No for=y>@projeMalzemeleri.Baslik</label>
+                                    </a>
+                                }
+                            }
+                        </div>
+                    </div>
+
+                    <h3>Kablosuz Haberleşme</h3>
+
+                    <div class="d-flex">
+                        <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+
+
+
+                            @foreach (var projeMalzemeleri in @ViewBag.Material)
+                            {
+                                @if (projeMalzemeleri.KategoriNo == 5)
+                                {
+
+                                    string Yol = "/Home/index/" + projeMalzemeleri.No;
+
+                                    @* <input type="checkbox" class="btn-check" id=@($"btncheck2{butonsayac}") autocomplete="off"> *@
+                                    <a href="@Yol">
+                                        <input type="checkbox" class="btn-check " id=@projeMalzemeleri.No autocomplete="off">
+                                        <label class="btn btn-outline-primary malzemeBtn" data-id=@projeMalzemeleri.No for=y>@projeMalzemeleri.Baslik</label>
+                                    </a>
+                                }
+                            }
+                        </div>
+                    </div>
+                      <h3>Motor</h3>
+
+                    <div class="d-flex">
+                        <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+
+
+
+                            @foreach (var projeMalzemeleri in @ViewBag.Material)
+                            {
+                                @if (projeMalzemeleri.KategoriNo == 6)
+                                {
+
+                                    string Yol = "/Home/index/" + projeMalzemeleri.No;
+                                    
+                                    @* <input type="checkbox" class="btn-check" id=@($"btncheck2{butonsayac}") autocomplete="off"> *@
+                                    <a href="@Yol" >
+                                    <input type="checkbox" class="btn-check " id=@projeMalzemeleri.No autocomplete="off">
+                                    <label class="btn btn-outline-primary malzemeBtn" data-id=@projeMalzemeleri.No for=y>@projeMalzemeleri.Baslik</label>
+                               </a> 
+                               }
+                            }
+                        </div>
+                    </div>
+
+                    </div>
+                </div>
+
+
+            <div class="col-6">   <!-- projeler -->
+
+              
+
+                @foreach (var projeler in @ViewBag.projeler)
+                {
+                    
+                    <div class="alert alert-success" role="alert">
+                        <h4 class="alert-heading">@projeler.Ad</h4>  
+                        <p class="mb-0">@projeler.Explain</p>
+                        <hr>
+                        <p class="mb-0">
+                            <b>Malzemeler :</b>
+                            @foreach (var item in ViewBag.Pm)
+                            {
+                               
+                                if (item.ProjectNo == projeler.No  )                               
+                                {
+                                    <li>@item.MaterialNoNavigation.Baslik</li>
+                                }
+                                
+                            }
+                           
+                        </p>
+                    </div>
+
+
+
+
+
+           
+                 
+
+                }
+              
+
+            </div>
+
+            </div>
+           
+            
+            </div>
+        
+</section>
+@* 
+@section Scripts {
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('input[type="checkbox"]').change(function () {
+                var selectedIds = [];
+                $('input[type="checkbox"]:checked').each(function () {
+                    selectedIds.push($(this).val());
+                });
+
+                $.ajax({
+                    url: '@Url.Action("FilterProjects", "YourController")',
+                    type: 'POST',
+                    data: { ids: selectedIds },
+                    traditional: true,
+                    success: function (result) {
+                        $('#filteredProjects').html(result);
+                    },
+                    error: function (xhr, status, error) {
+                        console.error("Error: " + status + " - " + error);
+                    }
+                });
+            });
+        });
+    </script>
+} *@
+
+@* <script src="~/js/anasayfa.js"></script>  *@
+
+                    <script>
+    function filterProjects() {
+        var checkboxes = document.querySelectorAll('.btn-check');
+        var projects = document.querySelectorAll('.project-item');
+
+        checkboxes.forEach(function(checkbox) {
+            if (checkbox.checked) {
+                var turId = checkbox.getAttribute('data-tur-id');
+                projects.forEach(function(project) {
+                    if (project.getAttribute('data-tur-id') === turId) {
+                        project.style.display = 'list-item';
+                    } else {
+                        project.style.display = 'none';
+                    }
+                });
+            }
+        });
+
+        // Eğer hiçbir checkbox seçili değilse tüm projeleri göster
+        var anyChecked = Array.from(checkboxes).some(cb => cb.checked);
+        if (!anyChecked) {
+            projects.forEach(function(project) {
+                project.style.display = 'list-item';
+            });
+        }
+    }
+</script>

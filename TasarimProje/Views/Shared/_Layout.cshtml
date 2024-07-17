@@ -1,0 +1,151 @@
+﻿@using DAL.Contexts
+
+
+@inject IHttpContextAccessor HttpContextAccessor
+@{
+    var userName = HttpContextAccessor.HttpContext.User.Identity.Name;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proje Keşfet</title>
+
+    <script src="~/assets/vendors/jquery/jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="~/assets/styles/main.css">
+    <script src="~/assets/scripts/main.js"></script>
+    <link rel="stylesheet" href="~/assets/vendors/bootstrap-5.3.3-dist/css/bootstrap.min.css">
+    <script src="~/assets/vendors/bootstrap-5.3.3-dist/js/bootstrap.min.js"></script>
+    <script src="~/assets/vendors/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/anasayfa.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container">
+                <a class="nav-link" href="/Home/Index">Proje Keşfet</a>
+               
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                      
+@*                         <li class="nav-item">
+                            <a class="nav-link" href="/Home/Hakkında">Hakkında</a>
+                        </li> *@
+                    </ul>
+
+                    <div class="d-flex">
+                       
+
+
+
+                        @if (HttpContextAccessor.HttpContext.User.Identity.IsAuthenticated)
+                        {
+                            <div class="d-flex">
+                                <p>Hoş Geldiniz @ViewBag.Users.AdSoyad</p>
+                                <a class="nav-link" href="/Home/Index">Çıkış Yap</a>
+                            </div>
+                        }
+                        else
+                        {
+                            <a class="nav-link" href="/Home/Login">Giriş Yap</a>
+                        }
+                 
+
+                </div>
+
+                
+            </div>
+        </nav>
+    </header>
+
+
+    <div class="container">
+        <main role="main" class="" id="mainContainer">
+            @RenderBody()
+
+            
+        </main>
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="text-center text-lg-start bg-body-tertiary text-muted">
+        <!-- Section: Social media -->
+        <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+            <!-- Left -->
+            <div class="me-5 d-none d-lg-block">
+                <span>Sosyal medyadan bizi takip edebilirsiniz:</span>
+            </div>
+            <!-- Left -->
+            <!-- Right -->
+            <div>
+               @*  <a href="https://www.facebook.com" class="me-4 text-reset">
+                    <i class="fab fa-facebook-f"></i>
+                </a> *@
+                <a href="https://www.twitter.com/sevgitry/" class="me-4 text-reset">
+                    <i class="fa-brands fa-twitter"></i>
+                </a>
+              
+                <a href="https://www.instagram.com/sevgitiryakii/" class="me-4 text-reset">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/sevgi-tiryaki-4948a5230/" class="me-4 text-reset">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/sevgitry" class="me-4 text-reset">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+            <!-- Right -->
+        </section>
+        <!-- Section: Social media -->
+        <!-- Section: Links  -->
+        <section class="">
+            <div class="container text-center text-md-start mt-5">
+                <!-- Grid row -->
+                <div class="row mt-3">
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                        <!-- Content -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            <i class="fas fa-gem me-3"></i>Proje Keşfet
+                        </h6>
+                        <p>
+                            Bilecik Şeyh Edebali Üniversitesi Bilgisayar Mühendisliği Tasarım Çalışması 2
+                        </p>
+                    </div>
+                    
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">İletişim</h6>
+                        <p><i class="fas fa-home me-3"></i> Bilecik/Turkey</p>
+                        <p>
+                            <i class="fas fa-envelope me-3"></i>
+                            1992363@ogrenci.bilecik.edu.tr
+                        </p>
+                        <p><i class="fas fa-phone me-3"></i> + 90 552 798 18 03</p>
+                       
+                    </div>
+                    <!-- Grid column -->
+                </div>
+                <!-- Grid row -->
+            </div>
+        </section>
+        <!-- Section: Links  -->
+        <!-- Copyright -->
+        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+            © 2024 Copyright:
+            @* <a class="text-reset fw-bold" href="https://mdbootstrap.com/">Bootstrap.com</a> *@
+        </div>
+        <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
+<script src="https://kit.fontawesome.com/f7b2c5cc60.js" crossorigin="anonymous"></script>

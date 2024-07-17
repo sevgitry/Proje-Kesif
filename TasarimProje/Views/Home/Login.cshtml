@@ -1,0 +1,57 @@
+﻿@model DAL.Entities.Users
+
+<link href="~/css/login.css" rel="stylesheet">
+
+
+<body class="hold-transition login-page">
+    <div class="login-box">
+
+        <!-- /.login-logo -->
+        <div class="card">
+            <div class="card-body login-card-body">
+                @if (ViewBag.ErrorMessage != null)
+                {
+                    <div class="alert alert-danger">@ViewBag.ErrorMessage</div>
+                }
+                @using (Html.BeginForm("Login", "Home", FormMethod.Post))
+                {
+                    <form>
+                   
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <input type="hidden" asp-for="No" />
+                        
+                        <div class="form-group">
+                            <label asp-for="Eposta" class="control-label">E-posta</label>
+                            <input asp-for="Eposta" class="form-control" />
+                            <span asp-validation-for="Eposta" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Sifre" class="control-label">Şifre</label>
+                            <input asp-for="Sifre" class="form-control" type="password"></input>
+                            <span asp-validation-for="Sifre" class="text-danger"></span>
+                        </div>
+                     
+                        <div class="form-group">
+                            <input type="submit" value="Giriş Yap" class="btn btn-primary" />
+                        </div>
+                    </form>
+
+
+
+                }
+                <!-- /.social-auth-links -->
+            </div>
+            <!-- /.login-card-body -->
+        </div>
+    </div>
+</body>
+
+    <!-- /.login-box -->
+    <!-- jQuery -->
+    <script src="~/plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="~/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="~/dist/js/adminlte.min.js"></script>
+
+
